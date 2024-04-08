@@ -56,6 +56,54 @@ public abstract class Artifact {
         toLevel(nextThreshold);
     }
 
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public Stat getMain() {
+        return main;
+    }
+
+    public void setMain(Stat main) {
+        this.main = main;
+    }
+
+    public int getTotalWeight() {
+        return totalWeight;
+    }
+
+    public void setTotalWeight(int totalWeight) {
+        this.totalWeight = totalWeight;
+    }
+
+    public Map<Stat, Float> getPossibleMainStats() {
+        return possibleMainStats;
+    }
+
+    public void setPossibleMainStats(Map<Stat, Float> possibleMainStats) {
+        this.possibleMainStats = possibleMainStats;
+    }
+
+    public ArrayList<Stat> getSubs() {
+        return subs;
+    }
+
+    public void setSubs(ArrayList<Stat> subs) {
+        this.subs = subs;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder(

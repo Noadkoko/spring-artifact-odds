@@ -1,5 +1,6 @@
 package fr.khry.springartifactodds.utils;
 
+import fr.khry.springartifactodds.artifact.*;
 import fr.khry.springartifactodds.stat.*;
 import org.apache.commons.collections4.CollectionUtils;
 
@@ -10,6 +11,21 @@ public final class ArtifactHelper {
     private static final Random r = new Random();
 
     private ArtifactHelper() {}
+
+    public static Artifact generateRandomMaxedArtifact() {
+        ArrayList<Artifact> artifactPieces = new ArrayList<>(Arrays.asList(
+                new Flower(),
+                new Feather(),
+                new Sands(),
+                new Goblet(),
+                new Circlet()
+        ));
+
+        Artifact picked = artifactPieces.get(r.nextInt(5));
+        picked.toLevel(20);
+
+        return picked;
+    }
 
     public static Stat getMainStat(Map<Stat, Float> possibleMainStats, int totalWeight) {
         Stat mainStat;
